@@ -9,6 +9,8 @@ params.mappability = "/home/mmunteanu/reference/CRG75_nochr.bed"
 // params.COSMIC_signatures = ""
 // params.our_signatures = ""
 
+input_file = file(params.input_file)
+mappability = file(params.mappability)
 
 vcf_list = Channel.fromPath(input_file, checkIfExists: true).splitCsv(header: true, sep: '\t', strip: true).map{ row -> [ row.sample, file(row.snv)] }
 
