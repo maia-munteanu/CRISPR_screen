@@ -15,7 +15,7 @@ def main_function():
      matrices = matGen.SigProfilerMatrixGeneratorFunc(project, genome, output, plot=False, exome=False, bed_file=None, chrom_based=False, tsb_stat=False, seqInfo=False, cushion=100)
      Analyze.cosmic_fit(samples_SNVs, output_ours, input_type="matrix", context_type="96",
                    collapse_to_SBS96=True, cosmic_version=3.3, exome=False,
-                   genome_build="GRCh37", signature_database=database_ours,
+                   genome_build=assembly, signature_database=database_ours,
                    exclude_signature_subgroups=None, export_probabilities=False,
                    export_probabilities_per_mutation=True, make_plots=True,
                    sample_reconstruction_plots=True, verbose=True)
@@ -26,7 +26,7 @@ def main_function():
      matrices = matGen.SigProfilerMatrixGeneratorFunc(project, genome, output, plot=False, exome=False, bed_file=None, chrom_based=False, tsb_stat=False, seqInfo=False, cushion=100)
      Analyze.cosmic_fit(samples_SNVs, output_cosmic, input_type="matrix", context_type="96",
                    collapse_to_SBS96=True, cosmic_version=3.3, exome=False,
-                   genome_build="GRCh37", signature_database=database_cosmic,
+                   genome_build=assembly, signature_database=database_cosmic,
                    exclude_signature_subgroups=None, export_probabilities=False,
                    export_probabilities_per_mutation=True, make_plots=True,
                    sample_reconstruction_plots=True, verbose=True)
