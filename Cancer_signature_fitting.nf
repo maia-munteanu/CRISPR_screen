@@ -38,7 +38,7 @@ process count_mutations {
     path "*" from filtered_vcfs.collect()
 
     output:
-    path("*.all") into counts_all
+    path("*SBS96.all") into counts_snvs
 
     shell:
     '''
