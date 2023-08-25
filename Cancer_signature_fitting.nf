@@ -56,7 +56,7 @@ process signature_fitting {
     publishDir params.output_folder, mode: 'move', pattern: "COSMIC_signatures_OGG1"
 
     input:
-    path("*.SBS96.all)" from counts_snvs
+    path "*.SBS96.all" from counts_snvs
     path cosmic_signatures
     path our_signatures
 
@@ -66,6 +66,6 @@ process signature_fitting {
 
     shell:
     '''
-    python3 !{baseDir}/SignatureAssignment.py Cancers.SBS96.all !{our_signatures} !{COSMIC_signatures} Our_signatures_k11_joint COSMIC_signatures_OGG1
+    python3 ${baseDir}/SignatureAssignment.py Cancers.SBS96.all ${our_signatures} ${cosmic_signatures} Our_signatures_k11_joint COSMIC_signatures_OGG1
     '''
 }
