@@ -35,7 +35,7 @@ process count_mutations {
     publishDir params.output_folder+"/Counts/", mode: 'copy', pattern: '*.all'
     
     input:
-    path "*" from filtered_vcfs.collect()
+    path "*.vcf" from filtered_vcfs.collect()
 
     output:
     // path("*.all") into counts_all
