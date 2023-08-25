@@ -42,7 +42,8 @@ process count_mutations {
 
     shell:
     '''
-    python3 !{baseDir}/MatrixGenerator.py "Cancers" !{params.sigproassembly} "./"
+    mkdir VCFs && mv *filt.vcf VCFs
+    python3 !{baseDir}/MatrixGenerator.py "Cancers" !{params.sigproassembly} "./VCFs/"
     cp ./output/SBS/Cancers.SBS96.all ./Cancers.SBS96.all
     cp ./output/SBS/Cancers.ID83.all ./Cancers.ID83.all
    '''     
