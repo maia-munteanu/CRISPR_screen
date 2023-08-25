@@ -38,7 +38,7 @@ process count_mutations {
     path "*" from filtered_vcfs.collect()
 
     output:
-    path("*SBS96.all") into counts_snvs
+    path("*.SBS96.all") into counts_snvs
 
     shell:
     '''
@@ -47,4 +47,15 @@ process count_mutations {
     cp ./VCFs/output/SBS/Cancers.SBS96.all ./Cancers.SBS96.all
     cp ./VCFs/output/ID/Cancers.ID83.all ./Cancers.ID83.all
    '''     
+}
+
+process signature_fitting {
+
+    input:
+    path("*.SBS96.all)" from counts_snvs
+
+
+
+
+
 }
