@@ -38,7 +38,7 @@ process count_mutations {
     path "*.vcf" from filtered_vcfs.collect()
 
     output:
-    // path("*.all") into counts_all
+    path("*.all") into counts_all
 
     shell:
     '''
