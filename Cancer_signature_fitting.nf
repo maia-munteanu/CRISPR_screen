@@ -64,5 +64,8 @@ process signature_fitting {
     path("Our_signatures_k11_joint")
     path("COSMIC_signatures_OGG1")
 
+    shell:
+    '''
     python3 !{baseDir}/SignatureAssignment.py Cancers.SBS96.all !{our_signatures} !{COSMIC_signatures} Our_signatures_k11_joint COSMIC_signatures_OGG1
+    '''
 }
