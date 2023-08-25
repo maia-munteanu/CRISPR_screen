@@ -45,6 +45,6 @@ process count_mutations {
     mkdir VCFs && mv *filt.vcf VCFs
     python3 !{baseDir}/MatrixGenerator.py "Cancers" !{params.sigproassembly} "./VCFs/"
     cp ./VCFs/output/SBS/Cancers.SBS96.all ./Cancers.SBS96.all
-    cp ./VCFs/output/SBS/Cancers.ID83.all ./Cancers.ID83.all
+    cp ./VCFs/output/ID/Cancers.ID83.all ./Cancers.ID83.all
    '''     
 }
