@@ -56,7 +56,7 @@ process signature_fitting {
     publishDir params.output_folder, mode: 'move', pattern: "COSMIC_signatures_OGG1"
 
     input:
-    path "*.SBS96.all" from counts_snvs
+    path "*" from counts_snvs
     path cosmic_signatures
     path our_signatures
 
