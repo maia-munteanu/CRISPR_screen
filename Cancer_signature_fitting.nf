@@ -3,7 +3,7 @@
 // Copyright (C) 2022 IRB Barcelona
 
 params.sigproassembly = "GRCh37"
-params.input_file = "/g/strcombio/fsupek_cancer1/SV_clusters_project/input2.tsv"
+params.input_file = "/g/strcombio/fsupek_data/MMR_BER_Project/Processed_data/Cancers/OV_CO_LU_ES_Hartwig_PCAWG_TCGA.tsv"
 params.output_folder = "/g/strcombio/fsupek_data/MMR_BER_Project/Processed_data/Cancers/OV_CO_LU_ES_Hartwig_PCAWG_TCGA/"
 params.mappability = "/home/mmunteanu/reference/CRG75_nochr.bed"
 params.cosmic_signatures = "/g/strcombio/fsupek_data/MMR_BER_Project/Processed_data/Calling/Strelka2/VCFs_SUPEK_24_28_29_30/Signature_databases/COSMIC_V3.3.1_SBS_GRCh37_OGG1.txt"
