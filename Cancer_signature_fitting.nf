@@ -27,7 +27,7 @@ process parse_vcfs {
        '''  
        snvname=$(bcftools query -l !{snv} | sed -n 2p)
        tabix -p vcf !{snv}
-       bcftools view -s $snvname -f 'PASS' --types snps --regions-file !{mappability} !{snv} | bcftools sort -Ov > !{sample}.filt.vcf
+       bcftools view -s $snvname -f 'PASS' --regions-file !{mappability} !{snv} | bcftools sort -Ov > !{sample}.filt.vcf
        '''
 }
 
