@@ -12,7 +12,6 @@ output_cosmic = sys.argv[5]
 assembly = sys.argv[6]
 
 def main_function():
-     matrices = matGen.SigProfilerMatrixGeneratorFunc(project, genome, output, plot=False, exome=False, bed_file=None, chrom_based=False, tsb_stat=False, seqInfo=False, cushion=100)
      Analyze.cosmic_fit(samples_SNVs, output_ours, input_type="matrix", context_type="96",
                    collapse_to_SBS96=True, cosmic_version=3.3, exome=False,
                    genome_build=assembly, signature_database=database_ours,
@@ -23,7 +22,6 @@ if __name__=="__main__":
    main_function()
 
 def main_function():
-     matrices = matGen.SigProfilerMatrixGeneratorFunc(project, genome, output, plot=False, exome=False, bed_file=None, chrom_based=False, tsb_stat=False, seqInfo=False, cushion=100)
      Analyze.cosmic_fit(samples_SNVs, output_cosmic, input_type="matrix", context_type="96",
                    collapse_to_SBS96=True, cosmic_version=3.3, exome=False,
                    genome_build=assembly, signature_database=database_cosmic,
