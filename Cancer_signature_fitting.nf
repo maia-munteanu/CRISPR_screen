@@ -6,11 +6,13 @@ params.sigproassembly = "GRCh37"
 params.input_file = "/g/strcombio/fsupek_cancer1/SV_clusters_project/input2.tsv"
 params.output_folder = "/g/strcombio/fsupek_data/MMR_BER_Project/Processed_data/Cancers/OV_CO_LU_ES_Hartwig_PCAWG_TCGA/"
 params.mappability = "/home/mmunteanu/reference/CRG75_nochr.bed"
-// params.COSMIC_signatures = ""
-// params.our_signatures = ""
+params.COSMIC_signatures = "/g/strcombio/fsupek_data/MMR_BER_Project/Processed_data/Calling/Strelka2/VCFs_SUPEK_24_28_29_30/Signature_databases/COSMIC_V3.3.1_SBS_GRCh37_OGG1.txt"
+params.our_signatures = "/g/strcombio/fsupek_data/MMR_BER_Project/Processed_data/Calling/Strelka2/VCFs_SUPEK_24_28_29_30/Signature_databases/Our_SBS_signatures.txt"
 
 input_file = file(params.input_file)
 mappability = file(params.mappability)
+COSMIC_signatures = file(params.COSMIC_signatures)
+our_signatures = file(params.our_signatures)
 
 vcf_list = Channel.fromPath(input_file, checkIfExists: true).splitCsv(header: true, sep: '\t', strip: true).map{ row -> [ row.sample, file(row.snv)] }
 
@@ -53,7 +55,8 @@ process signature_fitting {
 
     input:
     path("*.SBS96.all)" from counts_snvs
-
+    path COSMIC_signatures
+    path our_signatures
 
 
 
