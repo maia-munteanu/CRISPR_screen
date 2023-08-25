@@ -52,13 +52,17 @@ process count_mutations {
 }
 
 process signature_fitting {
+    publishDir params.output_folder, mode: 'move', pattern: "Our_signatures_k11_joint"
+    publishDir params.output_folder, mode: 'move', pattern: "COSMIC_signatures_OGG1"
 
     input:
     path("*.SBS96.all)" from counts_snvs
     path COSMIC_signatures
     path our_signatures
 
+    output:
+    path("Our_signatures_k11_joint")
+    path("COSMIC_signatures_OGG1")
 
-
-
+    python3 !{baseDir}/SignatureAssignment.py Cancers.SBS96.all !{our_signatures} !{COSMIC_signatures} Our_signatures_k11_joint COSMIC_signatures_OGG1
 }
