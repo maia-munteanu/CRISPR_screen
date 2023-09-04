@@ -54,6 +54,7 @@ process count_mutations {
 process signature_fitting {
     publishDir params.output_folder, mode: 'move', pattern: "Our_signatures_k11_joint"
     publishDir params.output_folder, mode: 'move', pattern: "COSMIC_signatures_OGG1"
+    publishDir params.output_folder, mode: 'move', pattern: "COSMIC_signatures"
 
     input:
     path "*" from counts_snvs
@@ -63,6 +64,7 @@ process signature_fitting {
     output:
     path("Our_signatures_k11_joint")
     path("COSMIC_signatures_OGG1")
+    path("COSMIC_signatures")
 
     shell:
     '''
