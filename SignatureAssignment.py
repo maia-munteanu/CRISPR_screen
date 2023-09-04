@@ -32,7 +32,7 @@ if __name__=="__main__":
    main_function()
 
 def main_function():
-     Analyze.cosmic_fit(samples_SNVs, output_cosmic, input_type="matrix", context_type="96",
+     Analyze.cosmic_fit(samples_SNVs, "COSMIC_signatures", input_type="matrix", context_type="96",
                    collapse_to_SBS96=True, cosmic_version=3.3, exome=False,
                    genome_build=assembly, signature_database=None,
                    exclude_signature_subgroups=None, export_probabilities=False,
